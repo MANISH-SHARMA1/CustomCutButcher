@@ -15,8 +15,8 @@ function Navbar() {
   return (
     <>
       <div className="fixed w-full z-50">
-        <div className="flex justify-between items-center bg-white text-green-700 py-5 md:py-0 px-4">
-          <div className="md:hidden text-green-900 cursor-pointer">
+        <div className="flex justify-between items-center bg-white text-green-900 py-5 md:py-0 px-4">
+          <div className="md:hidden cursor-pointer">
             <RxHamburgerMenu onClick={() => setOpenSidebar(!openSidebar)} />
           </div>
           <div className="hidden md:block">
@@ -27,10 +27,15 @@ function Navbar() {
               onClick={() => navigate("/")}
             />
           </div>
-          <p className="block text-lg font-semibold">Custom Cut Butcher</p>
+          <p
+            className="block text-2xl text-black font-semibold cursor-pointer"
+            onClick={() => navigate("/")}
+          >
+            Custom Cut Butcher
+          </p>
           <div className="flex gap-5 items-center">
             <div className="hidden md:flex gap-5 items-center">
-              <div className="flex items-center bg-white border border-green-900 px-1 text-green-900">
+              <div className="flex items-center bg-white border border-green-900 px-1">
                 <input
                   type="text"
                   placeholder="Search..."

@@ -11,7 +11,7 @@ import noHormone from "../assets/noHormones.png";
 
 function Range() {
   return (
-    <div className="text-green-900  font-semibold">
+    <div className="text-green-900  font-semibold pt-1">
       <p className="text-lg font-bold mt-2 text-center">EXPLORE THE RANGE</p>
       <div className="overflow-x-auto hideScrollbar mx-2">
         <div className="flex w-max lg:w-full gap-10 md:gap-0 md:justify-around items-center my-2">

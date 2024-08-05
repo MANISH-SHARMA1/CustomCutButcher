@@ -1,66 +1,60 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { IoSearch } from "react-icons/io5";
+import { Link, useNavigate } from "react-router-dom";
+import { IoCartOutline, IoSearch } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
+import icon from "../assets/customCut.png";
+import Cart from "./Cart";
+import Sidebar from "./Sidebar";
 
 function Navbar() {
-  const [toggle, setToggle] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
+  const [openSidebar, setOpenSidebar] = useState(false);
 
-  const handleToggle = () => {
-    if (toggle) {
-      setToggle(false);
-    } else {
-      setToggle(true);
-    }
-  };
+  const navigate = useNavigate();
 
   return (
     <>
-      <div className="bg-green-900 flex justify-around items-center py-2">
-        <div className="md:flex hidden gap-5 items-center text-white text-sm">
-          <div>
-            <Link to="/">HOME</Link>
+      <div className="fixed w-full z-50">
+        <div className="flex justify-between items-center bg-white text-green-700 py-5 md:py-0 px-4">
+          <div className="md:hidden text-green-900 cursor-pointer">
+            <RxHamburgerMenu onClick={() => setOpenSidebar(!openSidebar)} />
           </div>
-          <div>
-            <Link>ABOUT US</Link>
+          <div className="hidden md:block">
+            <img
+              src={icon}
+              alt="Custom Cut Butcher"
+              className="w-32 h-16 cursor-pointer"
+              onClick={() => navigate("/")}
+            />
           </div>
-          <div>
-            <Link>PRODUCTS</Link>
+          <p className="block text-lg font-semibold">Custom Cut Butcher</p>
+          <div className="flex gap-5 items-center">
+            <div className="hidden md:flex gap-5 items-center">
+              <div className="flex items-center bg-white border border-green-900 px-1 text-green-900">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  className="focus:outline-none w-16"
+                />
+                <IoSearch className="text-2xl py-1 cursor-pointer" />
+              </div>
+              <button
+                onClick={() => navigate("/contact")}
+                className="border border-green-900 px-3"
+              >
+                Contact
+              </button>
+            </div>
+            <IoCartOutline
+              className="cursor-pointer text-2xl"
+              onClick={() => setOpenCart(!openCart)}
+            />
           </div>
-          <div>
-            <Link to="/contact">CONTACT</Link>
-          </div>
-        </div>
-        <div className="flex items-center bg-white rounded px-1 text-green-900">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="focus:outline-none w-20 sm:w-max "
-          />
-          <IoSearch className="text-2xl py-1 cursor-pointer" />
-        </div>
-        <div className="md:hidden text-white cursor-pointer">
-          <RxHamburgerMenu onClick={() => handleToggle()} />
         </div>
       </div>
-      <div
-        className={`${
-          toggle ? "block md:hidden" : "hidden"
-        } text-center bg-green-900 text-white text-sm`}
-      >
-        <div className="py-1">
-          <Link to="/">HOME</Link>
-        </div>
-        <div className="py-1">
-          <Link>ABOUT US</Link>
-        </div>
-        <div className="py-1">
-          <Link>PRODUCTS</Link>
-        </div>
-        <div className="py-1">
-          <Link to="/contact">CONTACT</Link>
-        </div>
-      </div>
+
+      {openCart && <Cart onClose={() => setOpenCart(false)} />}
+      {openSidebar && <Sidebar onClose={() => setOpenSidebar(false)} />}
     </>
   );
 }

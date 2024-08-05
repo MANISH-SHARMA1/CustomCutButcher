@@ -1,24 +1,24 @@
 import React from "react";
-import heroImg from "../assets/Hero.jpeg";
+import heroImg from "../customCut/image_1.jpg";
+
 function Hero() {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${heroImg})`,
-        height: "80vh",
-      }}
-      className="bg-cover bg-no-repeat"
-    >
-      <div className="flex flex-col text-center gap-5 text-white font-semibold pt-24">
-        <p className="text-3xl sm:text-4xl md:text-6xl ">Custom Cut Butcher</p>
-        <p className="text-lg sm:text-xl md:text-2xl">
-          redefining the butcher shop experience
-        </p>
-        <div className="flex justify-center">
-          <button className="text-green-900 bg-white px-5 py-1 rounded mb-60 mt-16 hover:bg-green-900 hover:text-white">
-            Buy Now
-          </button>
-        </div>
+    <div className="relative h-screen overflow-hidden">
+      <div
+        style={{
+          backgroundImage: `url(${heroImg})`,
+        }}
+        className="fixed top-0 left-0 w-full h-full bg-cover bg-center -z-10"
+      ></div>
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white font-semibold z-10">
+        <p className="text-5xl">Custom Cut Butcher</p>
+        <p className="text-xl mt-2">redefining the butcher shop experience</p>
+        <button className="text-green-900 bg-white px-5 py-1 rounded mt-8 sm:mt-14 hover:opacity-90">
+          Buy Now
+        </button>
+      </div>
+      <div className="absolute bottom-0 w-full bg-black text-white text-center py-2 z-10">
+        <p>670 C River Oaks Pkwy, San Jose, CA 95134 | (408) 331-4020</p>
       </div>
     </div>
   );

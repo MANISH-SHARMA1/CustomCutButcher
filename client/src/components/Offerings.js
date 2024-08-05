@@ -15,7 +15,7 @@ function Offerings() {
       {items.map((item, index) => (
         <div
           key={index}
-          className="relative h-96 bg-cover bg-center cursor-pointer"
+          className="relative h-screen bg-cover bg-center cursor-pointer"
           style={{ backgroundImage: `url(${item.image})` }}
         >
           <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-center py-2">

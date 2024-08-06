@@ -2,8 +2,7 @@ import React from "react";
 
 function ContactForm() {
   return (
-    <div className="bg-green-900 text-white border-y border-white py-16">
-      <p className="text-center text-3xl font-semibold">Custom Cut Butcher</p>
+    <div className="bg-white text-green-950 border-y border-green-900 py-10">
       <div className="flex justify-center mt-10">
         <div className="sm:flex gap-16 items-center">
           <div className="hidden sm:flex flex-col gap-52">
@@ -27,23 +26,25 @@ function ContactForm() {
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="rounded focus:outline-none py-1 px-5 border-2 bg-green-900 w-full"
+                  className="rounded focus:outline-none py-1 px-5 border-2 border-green-900 w-full"
                 />
               </div>
               <div>
                 <input
                   type="email"
                   placeholder="Email"
-                  className="rounded focus:outline-none py-1 px-5 border-2 bg-green-900 w-full"
+                  className="rounded focus:outline-none py-1 px-5 border-2 border-green-900 w-full"
                 />
               </div>
               <div>
                 <textarea
                   placeholder="Message"
-                  className="rounded focus:outline-none py-1 px-5 border-2 bg-green-900 w-full h-28"
+                  className="rounded focus:outline-none py-1 px-5 border-2 border-green-900 w-full h-28"
                 />
               </div>
-              <button className="border-2 rounded">SEND</button>
+              <button className="border-2 border-green-900 rounded">
+                SEND
+              </button>
             </form>
           </div>
         </div>

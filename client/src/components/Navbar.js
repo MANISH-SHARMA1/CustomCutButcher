@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <>
-      <div className="fixed w-full z-50">
+      <div className="fixed w-full z-50 border-b border-green-950">
         <div className="flex justify-between items-center bg-white text-green-900 py-5 md:py-0 px-4">
           <div className="md:hidden cursor-pointer">
             <RxHamburgerMenu onClick={() => setOpenSidebar(!openSidebar)} />

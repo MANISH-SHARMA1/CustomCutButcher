@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="bg-white text-green-900 py-8 px-4">
+    <footer className="bg-white text-green-900 border-t border-green-950 py-8 px-4">
       <div className="container mx-auto flex flex-col md:flex-row justify-around">
         {/* Location Section */}
         <div className="mb-6 md:mb-0">

@@ -2,7 +2,7 @@ import React from "react";
 
 function ContactForm() {
   return (
-    <div className="bg-white text-green-950 border-y border-green-900 py-10">
+    <div className="bg-white text-green-950 py-10">
       <div className="flex justify-center mt-10">
         <div className="sm:flex gap-16 items-center">
           <div className="hidden sm:flex flex-col gap-52">

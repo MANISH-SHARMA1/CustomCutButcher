@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { IoCartOutline, IoSearch } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
-import icon from "../assets/customCut.png";
+import icon from "../customCut/customCut3.png";
 import Cart from "./Cart";
 import Sidebar from "./Sidebar";
 
@@ -19,11 +19,12 @@ function Navbar() {
           <div className="md:hidden cursor-pointer">
             <RxHamburgerMenu onClick={() => setOpenSidebar(!openSidebar)} />
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:block w-40">
             <img
               src={icon}
-              alt="Custom Cut Butcher"
-              className="w-32 h-16 cursor-pointer"
+              alt="Logo"
+              className="cursor-pointer h-full w-full"
+              style={{ clipPath: "inset(0 70% 0 0)" }}
               onClick={() => navigate("/")}
             />
           </div>

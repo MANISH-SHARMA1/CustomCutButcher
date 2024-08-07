@@ -35,7 +35,7 @@ function Navbar() {
           </div>
 
           {/* CENTER */}
-          <div className="flex-1 flex justify-center">
+          <div className="sm:flex-1 flex justify-center">
             <p
               className="text sm:text-xl md:text-2xl text-black font-semibold cursor-pointer"
               onClick={() => navigate("/")}

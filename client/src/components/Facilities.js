@@ -7,38 +7,48 @@ import delivery from "../customCut/delivery-truck_1.png";
 import online from "../customCut/online-order.png";
 
 function Facilities() {
+  const facilities = [
+    {
+      img: meet1,
+      name: "Custom-Cut",
+      detail: "Cut-to-Order by Experienced Butchers",
+    },
+    {
+      img: diversity,
+      name: "Ethnic Options",
+      detail: "Halal, Separate Station for Beef",
+    },
+    {
+      img: organic,
+      name: "Quality",
+      detail: "Fresh, Natural, Antibiotic-Free, Organic",
+    },
+    {
+      img: field,
+      name: "Eco-Friendly",
+      detail: "From Local, Humane, Eco-Conscious Farms",
+    },
+    {
+      img: delivery,
+      name: "Delievery",
+      detail: "Curbside, In-Store or at your Doorstep",
+    },
+    {
+      img: online,
+      name: "Online Ordering",
+      detail: "A few clicks all it takes!",
+    },
+  ];
+
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-5 sm:p-10 lg:p-20">
-      <div className="flex flex-col items-center gap-2">
-        <img src={meet1} alt="Custom-Cut" className="size-24" />
-        <p className="text-lg font-semibold">Custom-Cut</p>
-        <p className="text-center">Cut-to-Order by Experienced Butchers</p>
-      </div>
-      <div className="flex flex-col items-center gap-2">
-        <img src={diversity} alt="Ethnic Options" className="size-24" />
-        <p className="text-lg font-semibold">Ethnic Options</p>
-        <p className="text-center">Halal, Separate Station for Beef</p>
-      </div>
-      <div className="flex flex-col items-center gap-2">
-        <img src={organic} alt="Quality" className="size-24" />
-        <p className="text-lg font-semibold">Quality</p>
-        <p className="text-center">Fresh, Natural, Antibiotic-Free, Organic</p>
-      </div>
-      <div className="flex flex-col items-center gap-2">
-        <img src={field} alt="Eco-Friendly" className="size-24" />
-        <p className="text-lg font-semibold">Eco-Friendly</p>
-        <p className="text-center">From Local, Humane, Eco-Conscious Farms</p>
-      </div>
-      <div className="flex flex-col items-center gap-2">
-        <img src={delivery} alt="Delivery" className="size-24" />
-        <p className="text-lg font-semibold">Delivery</p>
-        <p className="text-center">Curbside, In-Store or at your Doorstep</p>
-      </div>
-      <div className="flex flex-col items-center gap-2">
-        <img src={online} alt="Online Ordering" className="size-24" />
-        <p className="text-lg font-semibold">Online Ordering</p>
-        <p className="text-center">A few clicks all it takes!</p>
-      </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-5 sm:p-10 lg:p-20 bg-gray-50">
+      {facilities.map((data, idx) => (
+        <div className="flex flex-col items-center gap-2">
+          <img src={data.img} alt={data.name} className="size-24" />
+          <p className="text-lg font-semibold">{data.name}</p>
+          <p className="text-center">{data.detail}</p>
+        </div>
+      ))}
     </div>
   );
 }

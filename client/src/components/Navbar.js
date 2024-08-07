@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IoCartOutline, IoSearch } from "react-icons/io5";
 import { RxHamburgerMenu } from "react-icons/rx";
-import icon from "../customCut/customCut3.png";
+import icon from "../assets/customCut2.png";
 import Cart from "./Cart";
 import Sidebar from "./Sidebar";
 
@@ -16,25 +16,36 @@ function Navbar() {
     <>
       <div className="fixed w-full z-50 border-b border-green-950">
         <div className="flex justify-between items-center bg-white text-green-900 py-5 md:py-0 px-4">
-          <div className="md:hidden cursor-pointer">
-            <RxHamburgerMenu onClick={() => setOpenSidebar(!openSidebar)} />
+          {/* LEFT PART */}
+          <div className="flex-1 flex items-center">
+            {/* hamburger */}
+            <div className="md:hidden cursor-pointer text-sm sm:text-xl md:text-2xl">
+              <RxHamburgerMenu onClick={() => setOpenSidebar(!openSidebar)} />
+            </div>
+
+            {/* image */}
+            <div className="hidden md:block">
+              <img
+                src={icon}
+                alt="Logo"
+                className="cursor-pointer size-16"
+                onClick={() => navigate("/")}
+              />
+            </div>
           </div>
-          <div className="hidden md:block w-40">
-            <img
-              src={icon}
-              alt="Logo"
-              className="cursor-pointer h-full w-full"
-              style={{ clipPath: "inset(0 70% 0 0)" }}
+
+          {/* CENTER */}
+          <div className="flex-1 flex justify-center">
+            <p
+              className="text sm:text-xl md:text-2xl text-black font-semibold cursor-pointer"
               onClick={() => navigate("/")}
-            />
+            >
+              Custom Cut Butcher
+            </p>
           </div>
-          <p
-            className="block text-2xl text-black font-semibold cursor-pointer"
-            onClick={() => navigate("/")}
-          >
-            Custom Cut Butcher
-          </p>
-          <div className="flex gap-5 items-center">
+
+          {/* RIGHT PART */}
+          <div className="flex-1 flex justify-end items-center gap-5">
             <div className="hidden md:flex gap-5 items-center">
               <div className="flex items-center bg-white border border-green-900 px-1">
                 <input
@@ -52,7 +63,7 @@ function Navbar() {
               </button>
             </div>
             <IoCartOutline
-              className="cursor-pointer text-2xl"
+              className="cursor-pointer sm:text-xl md:text-2xl"
               onClick={() => setOpenCart(!openCart)}
             />
           </div>

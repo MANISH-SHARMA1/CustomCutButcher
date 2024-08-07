@@ -19,7 +19,7 @@ function Navbar() {
           {/* LEFT PART */}
           <div className="flex-1 flex items-center">
             {/* hamburger */}
-            <div className="md:hidden cursor-pointer text-sm sm:text-xl md:text-2xl">
+            <div className="md:hidden cursor-pointer sm:text-xl md:text-2xl">
               <RxHamburgerMenu onClick={() => setOpenSidebar(!openSidebar)} />
             </div>
 
@@ -37,7 +37,7 @@ function Navbar() {
           {/* CENTER */}
           <div className="sm:flex-1 flex justify-center">
             <p
-              className="text sm:text-xl md:text-2xl text-black font-semibold cursor-pointer"
+              className="text-lg sm:text-xl md:text-2xl text-black font-semibold cursor-pointer"
               onClick={() => navigate("/")}
             >
               Custom Cut Butcher
@@ -63,7 +63,7 @@ function Navbar() {
               </button>
             </div>
             <IoCartOutline
-              className="cursor-pointer sm:text-xl md:text-2xl"
+              className="cursor-pointer text-xl md:text-2xl"
               onClick={() => setOpenCart(!openCart)}
             />
           </div>

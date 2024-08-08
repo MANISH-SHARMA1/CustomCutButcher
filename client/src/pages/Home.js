@@ -58,7 +58,7 @@ function Home() {
         <Signup />
         <Facilities />
         <Offerings />
-        <p className="pt-3 text-green-900 font-semibold text-2xl md:text-3xl text-center">
+        <p className="pt-3 text-black font-semibold text-2xl md:text-3xl text-center">
           Popular Cuts
         </p>
         <div className="flex justify-center">

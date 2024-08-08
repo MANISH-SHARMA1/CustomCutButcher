@@ -12,14 +12,19 @@ function Cart({ onClose }) {
   };
 
   return (
-    <div
-      className={`fixed inset-0 flex justify-end z-50 ${
-        isClosing ? "animate-slideOut" : "animate-slideIn"
-      }`}
-    >
-      <div className="absolute inset-0" onClick={handleCloseClick}></div>
-      <div className="relative h-screen w-80 text-green-900 bg-white">
-        <div className="h-14 flex items-center justify-between p-2 border-b-2 border-green-900 font-semibold">
+    <div className="fixed inset-0 flex justify-end z-50">
+      <div
+        className={`fixed inset-0 bg-black transition-opacity duration-300 ${
+          isClosing ? "opacity-0" : "opacity-50"
+        }`}
+        onClick={handleCloseClick}
+      ></div>
+      <div
+        className={`relative h-screen w-60 sm:w-80 bg-white text-lg transition-transform duration-300 ${
+          isClosing ? "animate-slideOut" : "animate-slideIn"
+        }`}
+      >
+        <div className="h-14 flex items-center justify-between p-2 border-b-2 border-black font-semibold">
           <h3>Shopping Cart</h3>
           <div className="cursor-pointer" onClick={handleCloseClick}>
             <AiOutlineClose />

@@ -14,8 +14,8 @@ function Navbar() {
 
   return (
     <>
-      <div className="fixed w-full z-50 border-b border-green-950">
-        <div className="flex justify-between items-center bg-white text-green-900 py-5 md:py-0 px-4">
+      <div className="fixed w-full z-50 border-b border-black">
+        <div className="flex justify-between items-center bg-white py-5 md:py-0 px-4">
           {/* LEFT PART */}
           <div className="flex-1 flex items-center">
             {/* hamburger */}
@@ -37,7 +37,7 @@ function Navbar() {
           {/* CENTER */}
           <div className="sm:flex-1 flex justify-center">
             <p
-              className="text-lg sm:text-xl md:text-2xl text-black font-semibold cursor-pointer"
+              className="text-lg sm:text-lg md:text-xl lg:text-2xl text-black font-semibold cursor-pointer"
               onClick={() => navigate("/")}
             >
               Custom Cut Butcher
@@ -46,20 +46,16 @@ function Navbar() {
 
           {/* RIGHT PART */}
           <div className="flex-1 flex justify-end items-center gap-5">
-            <div className="hidden md:flex gap-5 items-center">
-              <div className="flex items-center bg-white border border-green-900 px-1">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  className="focus:outline-none w-16"
-                />
-                <IoSearch className="text-2xl py-1 cursor-pointer" />
-              </div>
+            <div className="hidden md:flex gap-4 md:gap-5 items-center">
+              <IoSearch
+                className="text-3xl py-1 cursor-pointer"
+                onClick={() => navigate("/search")}
+              />
               <button
                 onClick={() => navigate("/contact")}
-                className="border border-green-900 px-3"
+                className="border border-black text-sm px-3 py-1"
               >
-                Contact
+                CONTACT
               </button>
             </div>
             <IoCartOutline

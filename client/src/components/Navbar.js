@@ -37,7 +37,7 @@ function Navbar() {
           {/* CENTER */}
           <div className="sm:flex-1 flex justify-center">
             <p
-              className="text-lg sm:text-lg md:text-xl lg:text-2xl text-black font-semibold cursor-pointer"
+              className="text-lg sm:text-lg md:text-xl lg:text-3xl text-black cursor-pointer"
               onClick={() => navigate("/")}
             >
               Custom Cut Butcher
@@ -53,7 +53,7 @@ function Navbar() {
               />
               <button
                 onClick={() => navigate("/contact")}
-                className="border border-black text-sm px-3 py-1"
+                className="border-2 border-black text-sm px-3 py-1"
               >
                 CONTACT
               </button>

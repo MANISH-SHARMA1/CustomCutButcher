@@ -20,12 +20,12 @@ function Cart({ onClose }) {
         onClick={handleCloseClick}
       ></div>
       <div
-        className={`relative h-screen w-60 sm:w-80 bg-white text-lg transition-transform duration-300 ${
+        className={`relative h-screen w-60 sm:w-80 bg-white text-sm md:text-base lg:text-lg transition-transform duration-300 ${
           isClosing ? "animate-slideOut" : "animate-slideIn"
         }`}
       >
-        <div className="h-14 flex items-center justify-between p-2 border-b-2 border-black font-semibold">
-          <h3>Shopping Cart</h3>
+        <div className="h-14 flex items-center justify-between p-2 border-b border-black">
+          <p className="font-semibold">Shopping Cart</p>
           <div className="cursor-pointer" onClick={handleCloseClick}>
             <AiOutlineClose />
           </div>
@@ -34,8 +34,11 @@ function Cart({ onClose }) {
           <div className="h-max">
             {isCartEmpty && (
               <div className="flex flex-col items-center gap-2 m-5">
-                <BsCartX className="text-5xl" />
-                <h4 className="font-semibold">Cart is Empty</h4>
+                <BsCartX className="text-3xl md:text-4xl lg:text-5xl" />
+                <p className="text-gray-600">
+                  Cart is{" "}
+                  <span className="text-black font-semibold">Empty</span>
+                </p>
               </div>
             )}
             {!isCartEmpty && (

@@ -127,6 +127,7 @@ function Home() {
             ))}
           </div>
         </div>
+        {/* CARD */}
         <div className="flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-5 w-max">
             {card.map((data, idx) => (

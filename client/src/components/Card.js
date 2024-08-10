@@ -1,8 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Card({ data }) {
+  const navigate = useNavigate()
   return (
-    <div className="text-black my-5 w-48 md:w-60 shadow-lg transition-transform transform hover:scale-105 cursor-pointer">
+    <div className="text-black my-5 w-48 md:w-60 shadow-lg transition-transform transform hover:scale-105 cursor-pointer" onClick={()=> navigate("/product-detail")}>
       <img
         src={data.img}
         alt="Product"

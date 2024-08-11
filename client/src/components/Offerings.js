@@ -11,13 +11,17 @@ function Offerings() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 p-5">
       {items.map((item, index) => (
         <div
           key={index}
-          className="relative h-96 md:h-screen bg-cover bg-center cursor-pointer"
-          style={{ backgroundImage: `url(${item.image})` }}
+          className="relative aspect-w-1 aspect-h-1 cursor-pointer"
         >
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-full object-cover"
+          />
           <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-center py-2">
             <p className="text-lg font-semibold">{item.title}</p>
           </div>

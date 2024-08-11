@@ -41,12 +41,12 @@ function Facilities() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 p-5 sm:p-10 lg:p-20 bg-gray-50">
+    <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 p-5 bg-gray-50">
       {facilities.map((data, idx) => (
         <div key={idx} className="flex flex-col items-center gap-2">
           <img src={data.img} alt={data.name} className="size-20 lg:size-24" />
-          <p className=" lg:text-lg font-semibold">{data.name}</p>
-          <p className="text-sm text-center">{data.detail}</p>
+          <p className="text-base lg:text-lg font-semibold">{data.name}</p>
+          <p className="text-xs sm:text-sm text-center">{data.detail}</p>
         </div>
       ))}
     </div>

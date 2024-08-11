@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import productImg from "../customCut/t-bone.webp";
 import { VscLocation, VscPackage } from "react-icons/vsc";
 import { RiArrowDropDownLine, RiShare2Line } from "react-icons/ri";
 
 function ProductDetail() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const [openIndex, setOpenIndex] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -32,8 +35,8 @@ function ProductDetail() {
   };
 
   return (
-    <div className="tracking-wider pt-20 md:pt-14 ">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 max-w-7xl md:h-screen p-4 md:p-6">
+    <div className="tracking-wider pt-16 md:pt-14 md:pb-6 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 max-w-7xl p-4 md:p-6">
         {/* LEFT PART */}
         <img
           src={productImg}
@@ -47,7 +50,8 @@ function ProductDetail() {
             Grain Finished - T-Bone - 21 Days Dry-aged
           </p>
           <p>
-            From <span className="text-lg font-semibold">$ 35 </span>to <span className="text-lg font-semibold">$ 125 </span>
+            From <span className="text-lg font-semibold">$ 35 </span>to{" "}
+            <span className="text-lg font-semibold">$ 125 </span>
           </p>
           <div className="flex flex-col gap-1">
             <label htmlFor="quantity" className="text-sm">

@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import heroImg from "../customCut/image_1.jpg";
 
 function Hero() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="relative h-screen overflow-hidden">
       <div

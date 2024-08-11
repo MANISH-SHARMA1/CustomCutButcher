@@ -109,28 +109,32 @@ function Home() {
         <p className="py-3 text-black text-2xl md:text-3xl text-center">
           Popular Cuts
         </p>
-        <div className="grid grid-cols-5 gap-1 sm:gap-24 md:gap-38">
-          {popularCuts.map((cut, idx) => (
-            <div
-              key={idx}
-              onMouseEnter={() => setIsHovered(idx)}
-              onMouseLeave={() => setIsHovered(null)}
-              className="flex flex-col items-center cursor-pointer text-gray-600 hover:text-red-600"
-            >
-              <img
-                src={isHovered === idx ? cut.img2 : cut.img1}
-                alt=""
-                className="size-5 sm:size-6 lg:size-7"
-              />
-              <p className="text-xs">{cut.name}</p>
-            </div>
-          ))}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-5 gap-9 sm:gap-24 md:gap-32 w-max">
+            {popularCuts.map((cut, idx) => (
+              <div
+                key={idx}
+                onMouseEnter={() => setIsHovered(idx)}
+                onMouseLeave={() => setIsHovered(null)}
+                className="flex flex-col items-center cursor-pointer text-gray-600 hover:text-red-600"
+              >
+                <img
+                  src={isHovered === idx ? cut.img2 : cut.img1}
+                  alt=""
+                  className="size-5 sm:size-6 lg:size-7"
+                />
+                <p className="text-xs">{cut.name}</p>
+              </div>
+            ))}
+          </div>
         </div>
         {/* CARD */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-5 p-5">
-          {card.map((data, idx) => (
-            <Card data={data} key={idx} />
-          ))}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 mb-5 w-max">
+            {card.map((data, idx) => (
+              <Card data={data} key={idx} />
+            ))}
+          </div>
         </div>
       </div>
     </>

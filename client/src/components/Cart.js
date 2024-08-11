@@ -33,12 +33,9 @@ function Cart({ onClose }) {
         <div className="h-full overflow-y-scroll hideScrollbar">
           <div className="h-max">
             {isCartEmpty && (
-              <div className="flex flex-col items-center gap-2 m-5">
+              <div className="flex flex-col items-center gap-2 m-5 text-gray-700">
                 <BsCartX className="text-3xl md:text-4xl lg:text-5xl" />
-                <p className="text-gray-600">
-                  Cart is{" "}
-                  <span className="text-black font-semibold">Empty</span>
-                </p>
+                <p className="">Cart is Empty</p>
               </div>
             )}
             {!isCartEmpty && (

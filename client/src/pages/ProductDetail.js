@@ -50,8 +50,8 @@ function ProductDetail() {
             Grain Finished - T-Bone - 21 Days Dry-aged
           </p>
           <p>
-            From <span className="text-lg font-semibold">$ 35 </span>to{" "}
-            <span className="text-lg font-semibold">$ 125 </span>
+            From <span className="text-lg font-semibold">$35 </span>to{" "}
+            <span className="text-lg font-semibold">$125 </span>
           </p>
           <div className="flex flex-col gap-1">
             <label htmlFor="quantity" className="text-sm">

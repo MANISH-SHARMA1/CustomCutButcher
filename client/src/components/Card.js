@@ -13,7 +13,7 @@ function Card({ data }) {
         alt="Product"
         className="h-52 lg:h-56 w-full object-cover rounded-t"
       />
-      <div className="p-2 text-sm lg:text-base">
+      <div className="p-2 text-sm">
         <p className="font-semibold">{data.name}</p>
         <p className="text-gray-600">1kg - 1.2kg</p>
         <p className="my-1 text-gray-600">

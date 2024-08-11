@@ -80,7 +80,7 @@ function ProductDetail() {
             </div>
           </div>
 
-          <button className=" text-white bg-gray-700 w-full text-xs md:text-sm p-2 md:px-3 md:py-1">
+          <button className=" text-white bg-gray-800 w-full text-xs md:text-sm p-2">
             Add To Cart
           </button>
 

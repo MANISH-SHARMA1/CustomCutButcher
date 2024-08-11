@@ -15,15 +15,15 @@ function Offerings() {
 
   return (
     <>
-      <div className="flex justify-center md:hidden">
+      <div className="md:hidden">
         <div className="text-center pt-5">
-          <div className="relative aspect-w-1 aspect-h-1">
+          <div className="relative">
             <img
               src={items[idx].image}
               alt={`Image ${idx}`}
-              className="relative h-52 w-44 rounded"
+              className="relative h-28 object-cover w-screen rounded"
             />
-            <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white text-center py-2">
+            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-15 text-4xl text-white">
               <p>{items[idx].title}</p>
             </div>
           </div>

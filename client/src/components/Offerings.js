@@ -21,7 +21,7 @@ function Offerings() {
             <img
               src={items[idx].image}
               alt={`Image ${idx}`}
-              className="relative h-28 object-cover w-screen rounded"
+              className="relative h-28 object-cover w-screen"
             />
             <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-15 text-4xl text-white">
               <p>{items[idx].title}</p>

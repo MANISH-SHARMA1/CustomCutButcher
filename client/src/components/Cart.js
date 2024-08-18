@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsCartX } from "react-icons/bs";
+import { useSelector } from "react-redux";
+import CartItem from "./CartItem";
 
 function Cart({ onClose }) {
-  const [isCartEmpty, setIsCartEmpty] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
+
+  const cart = useSelector((state) => state.cartSlice.cart);
+
+  let totalAmount = 0;
+  cart.forEach(
+    (item) => (totalAmount += item.dish.quantity * item.dish.product.price)
+  );
+  const isCartEmpty = cart.length === 0;
 
   const handleCloseClick = () => {
     setIsClosing(true);
@@ -41,19 +50,16 @@ function Cart({ onClose }) {
             {!isCartEmpty && (
               <>
                 <div>
-                  {/* {cart.map((product, idx) => (
+                  {cart.map((product, idx) => (
                     <CartItem item={product} key={idx} />
-                  ))} */}
+                  ))}
                 </div>
                 <div className="px-2 py-5 font-semibold mb-14">
                   <div className="flex items-center justify-between text-lg">
                     <p>Total:</p>
-                    <p>₹ totalAmount</p>
+                    <p>${totalAmount}</p>
                   </div>
-                  <div
-                    className="text-center text-blue-900 m-2 border-2 rounded border-blue-900 cursor-pointer"
-                    // onClick={handleOrder}
-                  >
+                  <div className="text-center text-blue-900 m-2 border-2 rounded border-blue-900 cursor-pointer">
                     Order Now!
                   </div>
                 </div>

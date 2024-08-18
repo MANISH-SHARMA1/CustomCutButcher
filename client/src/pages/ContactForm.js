@@ -2,8 +2,8 @@ import React from "react";
 
 function ContactForm() {
   return (
-    <div className="bg-white text-black py-10">
-      <div className="flex justify-center mt-10">
+    <div className="bg-white text-black pb-10">
+      <div className="flex justify-center">
         <div className="sm:flex gap-16 items-center">
           <div className="hidden sm:flex flex-col gap-32">
             <div className="flex flex-col">

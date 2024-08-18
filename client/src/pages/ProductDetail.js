@@ -2,14 +2,23 @@ import React, { useEffect, useState } from "react";
 import productImg from "../customCut/t-bone.webp";
 import { VscLocation, VscPackage } from "react-icons/vsc";
 import { RiArrowDropDownLine, RiShare2Line } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/slices/cartSlice";
 
 function ProductDetail() {
+  const [openIndex, setOpenIndex] = useState(null);
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [openIndex, setOpenIndex] = useState(null);
-  const [quantity, setQuantity] = useState(1);
+  const product = {
+    key: 1,
+    name: "Grain Finished - T-Bone - 21 Days Dry-aged",
+    price: "40",
+  };
 
   const faq = [
     {
@@ -35,7 +44,7 @@ function ProductDetail() {
   };
 
   return (
-    <div className="tracking-wider pt-16 md:pt-14 md:pb-6 ">
+    <div className="tracking-wider md:pb-6 ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 max-w-7xl p-4 md:p-6">
         {/* LEFT PART */}
         <img
@@ -80,7 +89,10 @@ function ProductDetail() {
             </div>
           </div>
 
-          <button className=" text-white bg-gray-800 w-full text-xs md:text-sm p-2">
+          <button
+            className=" text-white bg-gray-800 w-full text-xs md:text-sm p-2"
+            onClick={() => dispatch(addToCart({ product, quantity }))}
+          >
             Add To Cart
           </button>
 

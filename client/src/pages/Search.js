@@ -4,7 +4,7 @@ function Search() {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="pt-20 h-screen">
+    <div className="h-screen">
       <div className="px-4">
         <input
           type="text"

@@ -100,7 +100,7 @@ function Home() {
 
   return (
     <>
-      <Hero />
+      <Hero popularCuts={popularCuts} />
       <div style={{ backgroundColor: "white" }}>
         <Signup />
         <Facilities />

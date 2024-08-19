@@ -31,6 +31,9 @@ function Hero({ popularCuts }) {
 
       {/* BOTTOM PART */}
       <div className="absolute bottom-0 w-full  text-white text-sm text-center z-10">
+        <p className="py-2 bg-black">
+          670 C River Oaks Pkwy, San Jose, CA 95134 | (408) 331-4020
+        </p>
         <div className="flex justify-center bg-white ">
           <div className="grid grid-cols-5 gap-9 sm:gap-24 md:gap-32 w-max py-2">
             {popularCuts.map((cut, idx) => (
@@ -39,21 +42,20 @@ function Hero({ popularCuts }) {
                 onMouseEnter={() => setIsHovered(idx)}
                 onMouseLeave={() => setIsHovered(null)}
                 onClick={() => navigate(`/dishes/${cut.name}`)}
-                className="flex flex-col items-center cursor-pointer text-gray-600 hover:text-red-600"
+                className="flex flex-col items-center cursor-pointer  text-gray-600 hover:text-red-600"
               >
-                <img
-                  src={isHovered === idx ? cut.img2 : cut.img1}
-                  alt=""
-                  className="size-3 sm:size-4 lg:size-5"
-                />
+                <div className="bg-gray-200 rounded-full p-1">
+                  <img
+                    src={isHovered === idx ? cut.img2 : cut.img1}
+                    alt=""
+                    className="size-3 sm:size-4 lg:size-5"
+                  />
+                </div>
                 <p className="text-xs">{cut.name}</p>
               </div>
             ))}
           </div>
         </div>
-        <p className="py-2 bg-black">
-          670 C River Oaks Pkwy, San Jose, CA 95134 | (408) 331-4020
-        </p>
       </div>
     </div>
   );

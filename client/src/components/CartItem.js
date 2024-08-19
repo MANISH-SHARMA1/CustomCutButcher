@@ -16,7 +16,7 @@ function CartItem({ item }) {
   const quantity = item.dish.quantity;
 
   return (
-    <div className="flex items-center gap-2 border-b-2 border-blue-900 px-1">
+    <div className="flex gap-2 border-b border-black p-1">
       <div className="w-20 h-20">
         <img
           src={cartImg}
@@ -25,27 +25,38 @@ function CartItem({ item }) {
         />
       </div>
       <div className="flex flex-grow justify-between">
-        <div className="flex flex-col gap-1 font-semibold">
-          <p>{itemDetail.name}</p>
-          <p>Price: ${itemDetail.price}</p>
-          <div className="border-2 border-blue-900 w-fit">
-            <span
-              className="py-1 px-3 border-r-2 border-blue-900 inline-block text-xl cursor-pointer font-normal"
-              onClick={() => dispatch(removeFromCart(key))}
-            >
-              -
-            </span>
-            <span className="text-center w-10 inline-block">{quantity}</span>
-            <span
-              className="py-1 px-3 border-l-2 border-blue-900 inline-block text-xl cursor-pointer font-normal"
-              onClick={() =>
-                dispatch(addToCart({ product: itemDetail, quantity }))
-              }
-            >
-              +
-            </span>
+        <div className="flex flex-col gap-1 font-normal text-sm">
+          <p className="">{itemDetail.name}</p>
+          <p className="mb-1">
+            Price: <span className="font-semibold">${itemDetail.price}</span>
+          </p>
+          <div className="flex justify-between items-center">
+            <div className="border border-black w-fit">
+              <span
+                className=" px-2 border-r border-black inline-block text-lg cursor-pointer"
+                onClick={() => dispatch(removeFromCart(key))}
+              >
+                -
+              </span>
+              <span className="text-center w-7 inline-block font-semibold">
+                {quantity}
+              </span>
+              <span
+                className=" px-2 border-l border-black inline-block text-lg cursor-pointer"
+                onClick={() =>
+                  dispatch(addToCart({ product: itemDetail, quantity }))
+                }
+              >
+                +
+              </span>
+            </div>
+            <p className="">
+              SubTotal:{" "}
+              <span className="font-semibold">
+                ${itemDetail.price * quantity}
+              </span>
+            </p>
           </div>
-          <p className="my-1">SubTotal: ${itemDetail.price * quantity}</p>
         </div>
         <div
           className="cursor-pointer mt-1 h-1"

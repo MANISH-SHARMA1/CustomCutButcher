@@ -33,8 +33,8 @@ function Cart({ onClose }) {
           isClosing ? "animate-slideOut" : "animate-slideIn"
         }`}
       >
-        <div className="h-14 flex items-center justify-between p-2 border-b border-black">
-          <p className="font-semibold">Shopping Cart</p>
+        <div className="h-14 flex items-center justify-between p-2 font-medium border-b border-black">
+          <p>Shopping Cart</p>
           <div className="cursor-pointer" onClick={handleCloseClick}>
             <AiOutlineClose />
           </div>
@@ -54,12 +54,12 @@ function Cart({ onClose }) {
                     <CartItem item={product} key={idx} />
                   ))}
                 </div>
-                <div className="px-2 py-5 font-semibold mb-14">
-                  <div className="flex items-center justify-between text-lg">
+                <div className="px-2 py-4 font-medium mb-14">
+                  <div className="flex items-center justify-between text-base">
                     <p>Total:</p>
-                    <p>${totalAmount}</p>
+                    <p className="font-semibold">${totalAmount}</p>
                   </div>
-                  <div className="text-center text-blue-900 m-2 border-2 rounded border-blue-900 cursor-pointer">
+                  <div className="text-center m-2 border-2 rounded border-black cursor-pointer">
                     Order Now!
                   </div>
                 </div>

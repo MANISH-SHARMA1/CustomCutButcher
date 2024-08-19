@@ -27,10 +27,10 @@ function CartItem({ item }) {
       <div className="flex flex-grow justify-between">
         <div className="flex flex-col gap-1 font-normal text-sm">
           <p className="">{itemDetail.name}</p>
-          <p className="mb-1">
+          <p className="sm:mb-1">
             Price: <span className="font-semibold">${itemDetail.price}</span>
           </p>
-          <div className="flex justify-between items-center">
+          <div className="flex flex-col sm:flex-row gap-1 sm:gap-0 sm:justify-between sm:items-center">
             <div className="border border-black w-fit">
               <span
                 className=" px-2 border-r border-black inline-block text-lg cursor-pointer"
